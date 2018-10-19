@@ -23,12 +23,12 @@ public class AlexanderDrive extends LinearOpMode {
     private float max;
     @Override
     public void runOpMode()  {
-    //    leftMotor = hardwareMap.get(DcMotor.class,"leftMotor");
-    //    rightMotor = hardwareMap.get(DcMotor.class,"rightMotor");
+        leftMotor = hardwareMap.get(DcMotor.class,"leftMotor");
+        rightMotor = hardwareMap.get(DcMotor.class,"rightMotor");
         flipper = hardwareMap.get(DcMotor.class,"flipper");
-    //    rotateThingey = hardwareMap.get(DcMotor.class,"rotateThingey");
-    //    colorSensor = hardwareMap.get(ColorSensor.class,"colorSensor");
-    //    servo = hardwareMap.get(Servo.class,"servo");
+        rotateThingey = hardwareMap.get(DcMotor.class,"rotateThingey");
+        colorSensor = hardwareMap.get(ColorSensor.class,"colorSensor");
+        servo = hardwareMap.get(Servo.class,"servo");
 
         waitForStart();
         while (opModeIsActive()) {
@@ -37,7 +37,7 @@ public class AlexanderDrive extends LinearOpMode {
 
                 flipper.setTargetPosition(x);
 
-          /*
+          
             drive = -gamepad1.left_stick_y;
             turn  =  gamepad1.right_stick_x;
 
@@ -56,7 +56,7 @@ public class AlexanderDrive extends LinearOpMode {
             // Output the safe vales to the motor drives
             leftMotor.setPower(left);
             rightMotor.setPower(right);
-            */
+            
             }
         }
     }
