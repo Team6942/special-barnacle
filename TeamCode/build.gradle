@@ -14,3 +14,14 @@ dependencies {
     implementation project(':DogeCV')
     implementation project(':openCVLibrary3')
 }
+android {
+    compileSdkVersion 27
+    buildToolsVersion '28.0.3'
+}
+repositories {
+    flatDir {
+        google()
+        jcenter()
+        dirs '../libs'
+    }
+}
