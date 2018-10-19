@@ -19,7 +19,7 @@ public class Team6942 extends LinearOpMode {
          x = flipper.getCurrentPosition();
          flipper.setTargetPosition(500);
          flipper.setPower(1);
-         telemetry.addData("",x);
+         telemetry.addData("motor pos",x);
          telemetry.update();
 
         }
