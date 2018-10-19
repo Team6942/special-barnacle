@@ -56,8 +56,8 @@ public class AlexanderGherardiRobat extends OpMode
     @Override
     public void init() {
         telemetry.addData("Status", "alexander is ta bomb");
-    //    fl = hardwareMap.get(DcMotor.class,"fl");
-     //   br = hardwareMap.get(DcMotor.class,"br");
+        fl = hardwareMap.get(DcMotor.class,"fl");
+        br = hardwareMap.get(DcMotor.class,"br");
         bl = hardwareMap.get(DcMotor.class,"bl");
         fr = hardwareMap.get(DcMotor.class,"fr");
         detector = new SamplingOrderDetector();
@@ -101,9 +101,9 @@ public class AlexanderGherardiRobat extends OpMode
         telemetry.addData("Current Order" , detector.getCurrentOrder().toString()); // The current result for the frame
         telemetry.addData("Last Order" , detector.getLastOrder().toString()); // The last known result
         if (detector.getCurrentOrder() == SamplingOrderDetector.GoldLocation.CENTER) {
-            ///todo do thing hear
+            //todo do thing hear
         } if (detector.getCurrentOrder() == SamplingOrderDetector.GoldLocation.LEFT) {
-            ///todo do thing hear
+            //todo do thing hear
             double x = goldAlignDetector.getXPosition();
             if (x < 0){
                 telemetry.addData("Gold Current Order" , "bbbb"); // The current result for the frame
@@ -111,13 +111,14 @@ public class AlexanderGherardiRobat extends OpMode
             }
 
         } if (detector.getCurrentOrder() == SamplingOrderDetector.GoldLocation.RIGHT) {
-            ///todo do thing hear
+            //todo do thing hear
             double x = goldAlignDetector.getXPosition();
             if (0 < x){
                 telemetry.addData("Gold Current Order" , "ccccc"); // The current result for the frame
 
             }
         }
+
         telemetry.update();
     }
 
