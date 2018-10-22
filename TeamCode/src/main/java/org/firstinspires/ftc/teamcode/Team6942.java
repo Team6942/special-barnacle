@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 
@@ -15,12 +16,16 @@ public class Team6942 extends LinearOpMode {
         flipper.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         waitForStart();
         while (opModeIsActive()){
-
+         telemetry.addData("11",flipper.getConnectionInfo());
          x = flipper.getCurrentPosition();
          flipper.setTargetPosition(360);
          flipper.setPower(1);
          telemetry.addData("motor pos",x);
          telemetry.update();
+         if (x > 350) {
+             flipper.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+             break;
+         }
         }
 
     }
