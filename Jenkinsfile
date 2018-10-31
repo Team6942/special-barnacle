@@ -1,14 +1,12 @@
 pipeline {
-  agent {
-    node {
-      label 'aaa'
-    }
-
-  }
+  agent any
   stages {
     stage('error') {
       steps {
-        sh ' ./gradlew assembleRelease '
+        sh '''
+
+
+ ./gradlew assembleRelease '''
       }
     }
   }
