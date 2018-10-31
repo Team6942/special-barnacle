@@ -3,10 +3,7 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        sh '''
-
-
- ./gradlew assembleRelease '''
+        sh './gradlew compileDebugSources'
       }
     }
   }
