@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        sh 'sudo ./gradlew assembleRelease '
+        sh ' ./gradlew assembleRelease '
       }
     }
   }
